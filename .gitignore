@@ -1,0 +1,8 @@
+*.nc
+*.png
+data/
+weather/
+logs/
+grib2/
+nc/
+raqdps.tar.gz

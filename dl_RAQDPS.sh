@@ -30,7 +30,7 @@ export lastHour=`echo ${lastAvailDateTime} | sed 's/.*T\(.*\)Z/\1/'`
 mkdir ${MAIN}/grib2
 cd ${MAIN}/grib2
 
-vars=(https://dd.weather.gc.ca/model_raqdps/10km/grib2/00/047/)
+vars=(https://dd.weather.gc.ca/model_raqdps/10km/grib2/00/072/)
 
 export var
 for var in ${vars[@]}; do
@@ -51,4 +51,4 @@ done
 echo ${lastAvailDateTime} > ${MAIN}/.lastDlDateTime
 
 cd ${MAIN}
-submit submit.sh
+sbatch submit.sh

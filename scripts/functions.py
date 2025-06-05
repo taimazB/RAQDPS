@@ -84,7 +84,7 @@ def genImage(item):
             iLat = np.argmin(np.abs(latNC-lat))
             values = []
             for var_t in var:
-                values.append(float(var_t[iLat,iLon]))
+                values.append(int(round(float(var_t[iLat,iLon]))))
             df[province][f"city_{id}"] = values
         #
         province_time = (datetime.now() - province_start).total_seconds()
