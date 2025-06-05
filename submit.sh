@@ -10,7 +10,7 @@
 ##  This file is included in the docker image for reference only.
 
 export MAIN=$PWD
-export SERVER=taimaz.ddns.net
+export SERVER_IP=taimaz.ddns.net
 export SERVER_DIR=/home/taimaz/Projects/Blender/Projects/sialuk/data/models/PM25SFC/
 
 export LOCAL_UID=$(id -u)
@@ -26,8 +26,9 @@ for d in *; do
     mv images/* .
     rm -r data images
 done
-rsync -aru ${MAIN}/nc/ ${SERVER_IP}:${SERVER_DIR}/
+rsync -aur ${MAIN}/nc/ ${SERVER_IP}:${SERVER_DIR}/
 
+cd ${MAIN}
 rm -r ${MAIN}/grib2 ${MAIN}/nc
 
 rm .active
