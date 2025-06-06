@@ -8,7 +8,7 @@ RUN apt-get update && apt-get upgrade -y
 
 # Install Python 3.12.3 and dependencies
 RUN apt-get install -y \
-  axel \
+  wget \
   cdo=2.4.0-1build3 \
   parallel \
   rsync \
